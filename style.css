@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/**********************/
+/** Collapsible List **/
+/**********************/
+ul.collapsible-list {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul.collapsible-list > li {
+  border: thin solid #eee;
+  list-style: none;
+  margin-left: 0;
+  padding: 0 0.5rem;
+}
+
+ul.collapsible-list > li > div:first-child {
+  display: block;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+ul.collapsible-list > li > div:first-child:before {
+  padding-right: 0.5rem;
+  content: '+';
+}
+
+ul.collapsible-list > li > div:nth-child(2) {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+ul.collapsible-list > li.open > div:first-child:before {
+  content: '-';
+}
+
+ul.collapsible-list > li.open > div:nth-child(2) {
+  max-height: 1000px;
+}
